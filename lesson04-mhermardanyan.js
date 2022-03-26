@@ -31,7 +31,35 @@ function matrixSpiral(n){
 }
 
 
+function sortArr(arr){
+    if(arr.length < 1){
+        return arr
+    }
+    let a = 0;
+    let b = 0;
+    let c = 0;
+    for (; b <= arr.length-1 ; b++){
+        if(arr[b] >  arr[b+1]){
+            [arr[b],arr[b+1]] = [arr[b+1],arr[b]]
+            a = (b);
+            c = (b-1)
+
+        }
+
+        for (; arr[a] < arr[c] ; c--,a-- ){
+            [arr[a],arr[c]] = [arr[c],arr[a]]
+        }
+    }
+
+    return arr ;
+}
+
+
+
+
+
 
 module.exports = {
     matrixSpiral,
+    sortArr,
 }
